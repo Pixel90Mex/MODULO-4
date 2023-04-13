@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libreria di Gianluca</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+
+    <style>
+        
+        .card {
+            margin-bottom: 30px;
+        }
+
+        .card-img-top {
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .card-title {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .card-text {
+            margin-bottom: 10px;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn-add-to-cart {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        .btn-skip {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+
+        .btn-add-to-cart:hover,
+        .btn-skip:hover {
+            background-color: #218838;
+            border-color: #218838;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+            <p class="navbar-brand mt-3" href="#">Libreria di Gianluca</p>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+
+                <ul class="navbar-nav mr-auto">
+
+                    <li class="nav-item">
+
+                        <form class="form-inline my-2 my-lg-0">
+
+                            <input id="searchField" class="form-control mr-sm-2" type="search" placeholder="Cerca..." aria-label="Cerca">
+
+                        </form>
+
+                    </li>
+
+                </ul>
+
+                <!-- Button trigger modal -->
+                <button id="carrelloBlu" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Carrello
+                    <ion-icon style="font-size: 20px;" name="cart-outline"></ion-icon>
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                    <div class="modal-dialog">
+
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close">
+                                </button>
+
+                            </div>
+
+                            <div class="modal-body">
+                                <ul></ul>
+                            </div>
+
+                            <div class="modal-footer">
+
+                                <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                                <button type="button" class="save btn btn-primary">Save changes</button>
+
+                                <button onclick="svuotaCarrello()" type="button" class="save btn btn-primary">Svuota carrello</button>
+
+                                <span id="cart-container"></span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+        <div class="container">
+
+            <div class="row" id="books">
+
+                <!-- questo div contiene tutte le card -->
+
+            </div>
+            
+        </div>
+
+        <hr>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

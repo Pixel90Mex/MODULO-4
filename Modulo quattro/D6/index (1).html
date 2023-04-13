@@ -1,0 +1,68 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Lista utenti</title>
+    </head>
+
+    <body>
+        <h1>Lista utenti</h1>
+
+        <div>
+
+            <label for="filter-by">Filtra per:</label>
+
+            <select id="filter-by">
+
+                <option value="name">Name</option>
+
+                <option value="username">Username</option>
+
+                <option value="email">Email</option>
+
+            </select>
+
+            <input type="text" id="filter-value" />
+
+            <button id="filter-button">Filter</button>
+
+            <button id="list-names-button">List Names</button>
+
+            <button id="list-addresses-button">List Addresses</button>
+
+        </div>
+
+        <table id="users-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+
+                    <th>Name</th>
+
+                    <th>Username</th>
+
+                    <th>Email</th>
+
+                    <th>Address</th>
+
+                    <th>Phone</th>
+
+                    <th>Website</th>
+
+                    <th>Company</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody></tbody>
+
+        </table>
+        
+    <script src="script.js"></script>
+  </body>
+</html>

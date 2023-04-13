@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <script src="https://kit.fontawesome.com/1205482781.js"></script>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <title>Home</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <!--SIDEBAR VERTICAL-->
+      <div class="col-2">
+        <nav class="navbar navbar-expand-md navbar-white bg-navbar fixed-left justify-content-between" id="sidebar">
+          <div class="nav-container">
+            <a class="navbar-brand" href="index.html">
+              <img src="logo/Spotify_Logo.png" alt="Spotify_Logo" width="131" height="40" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <ul>
+                  <li>
+                    <a class="nav-item nav-link" href="index.html"><i class="fas fa-home fa-lg"></i>&nbsp; Home
+                    </a>
+                  </li>
+                  <li>
+                    <a class="nav-item nav-link" href="#"><i class="fas fa-book-open fa-lg"></i>&nbsp; Your
+                      Library</a>
+                  </li>
+                  <li>
+                    <div class="input-group mt-3">
+                      <input type="text" class="form-control mb-2" id="searchField" placeholder="Search"
+                        aria-label="Search" aria-describedby="basic-addon2" />
+                      <div class="input-group-append" style="margin-bottom: 4%">
+                        <button class="btn btn-outline-secondary btn-sm" type="button" id="button-search"
+                          onclick="search()">
+                          GO
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-btn">
+            <button class="btn signup-btn" type="button">Sign Up</button>
+            <button class="btn login-btn" type="button">Login</button>
+            <a href="#">Cookie Policy</a> |
+            <a href="#"> Privacy</a>
+          </div>
+        </nav>
+      </div>
+      <!--END SIDEBAR VERTICAL-->
+
+      <!--MAIN-->
+      <div class="col-12 mb-5 col-md-9 offset-md-3 mainPage">
+        <div class="row">
+
+          <div class="col-9 col-lg-11 mainLinks d-none d-md-flex">
+            <a href="#">TRENDING</a>
+            <a href="#">PODCAST</a>
+            <a href="#">MOODS AND GENRES</a>
+            <a href="#">NEW RELEASES</a>
+            <a href="#">DISCOVER</a>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col-10">
+            <div id="searchResults" style="display: none">
+              <h2>Search Results</h2>
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-10">
+            <div id="eminem" class="d-none">
+              <h2>Eminem</h2>
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3" id="eminemSection">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-10">
+            <div id="metallica" class="d-none">
+              <h2>Metallica</h2>
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3" id="metallicaSection">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-10">
+            <div id="queen" class="d-none">
+              <h2>Queen</h2>
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3" id="queenSection">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-10">
+            <div id="found" class="d-none">
+              <h2>Search results</h2>
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3" id="searchSection">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--END MAIN-->
+
+  <!--NAVBAR FLEX-BOTTOM-->
+  <div class="container-fluid fixed-bottom bg-container pt-1">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-2">
+        <div class="row">
+          <div class="col-6 col-md-4 col-lg-2 offset-3 offset-md-4 offset-lg-5 playerControls mt-1">
+            <div class="row">
+              <a href="#">
+                <img src="playerbuttons/Shuffle.png" alt="shuffle" />
+              </a>
+              <a href="#">
+                <img src="playerbuttons/Previous.png" alt="shuffle" />
+              </a>
+              <a href="#">
+                <img src="playerbuttons/Play.png" alt="shuffle" />
+              </a>
+              <a href="#">
+                <img src="playerbuttons/Next.png" alt="shuffle" />
+              </a>
+              <a href="#">
+                <img src="playerbuttons/Repeat.png" alt="shuffle" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center playBar py-3">
+          <div class="col-8 col-md-6">
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--END NAVBAR BOTTOM-->
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+  </script>
+
+  <script>
+
+    //CREAZIONE PRIMA ROW CARD CON JAVASCRIPT
+
+    var containerDiv = document.createElement("div");//creazione del div container
+    containerDiv.classList.add("container");//assegnazione classe container al div
+
+    var rowDiv = document.createElement("div");//creazione del div row
+    rowDiv.classList.add("row", "justify-content-end");//assegnazione classe row al div. senza justify-content-end la navbar verticale si sovrapponeva alle card: così no
+
+    for (var i = 1; i <= 3; i++) {//creazione delle 3 card
+
+      var colDiv = document.createElement("div");//creazione del div col
+      colDiv.classList.add("col-md-3, col-sm-6");//assegnazione classe col-md-3 al div
+
+
+      var cardDiv = document.createElement("div");// creazione della singola card
+      cardDiv.classList.add("card");//assegnazione classe card al div
+
+
+      var title = document.createElement("h5");//creazione dell'h5 che contiene titolo della canzone
+      title.classList.add("card-title-" + i);//assegnazione classe card-title
+      title.setAttribute("id", "titolo-" + i);//setAttibute serve per assegnare un attributo (id) e dargli un nome (titolo). metto + i perché ogni id deve avere nome diverso
+      title.textContent = "Titolo della canzone " + i;//assegno un contenuto al titolo. metto + i perché ogni id deve avere nome diverso
+      
+
+      var img = document.createElement("img");//creazione dell'immagine di copertina
+      img.classList.add("card-img-top");//assegnazione classe card-img-top all'immagine
+      img.setAttribute("alt", "copertina-album-" + i);
+      img.setAttribute("id", "copertina-" + i);
+
+
+      var cardBodyDiv = document.createElement("div");//creazione del corpo della card
+      cardBodyDiv.classList.add("card-body-" + i);//assegnazione classe card-body
+
+
+      var duration = document.createElement("p");//creazione della durata della canzone
+      duration.classList.add("card-text-" + i);//assegnazione classe
+      duration.setAttribute("id", "durata-" + i);//assegnazione id
+      duration.textContent = "";//assegnazione testo
+
+
+      //aggiunta titolo, durata, img e tutto il resto ad ogni div creato
+      cardBodyDiv.appendChild(title);
+      cardBodyDiv.appendChild(duration);
+      cardDiv.appendChild(img);
+      cardDiv.appendChild(cardBodyDiv);
+      colDiv.appendChild(cardDiv);
+      rowDiv.appendChild(colDiv);
+    }
+
+    containerDiv.appendChild(rowDiv);//aggiunta del div row al div container
+    document.body.appendChild(containerDiv);//aggiunta del div container alla pagina HTML
+
+
+    document.addEventListener("DOMContentLoaded", async() => {
+
+      /* chiamata unica per le tre card */
+
+      fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=pinguini%20tattici%20nucleari`).then((response) => {
+        
+        response.json().then((data) => {
+
+          console.log(data);
+
+          /* per la prima card */
+
+          const titolo = document.getElementById("titolo-1");//agganciati all'id titolo
+          titolo.textContent = data.data[0].title;//aggiorna il contenuto HTML con il titolo della prima canzone restituita dalla chiamata API
+          
+          const durata = document.getElementById("durata-1");//agganciati all'id durata
+          durata.textContent = data.data[0].duration + " sec";//aggiorna contenuto HTML con durata canzone. ci sarebbe da trasformare in 2.12 minuti ma non so come si fa
+          
+          const img = document.getElementById("copertina-1");
+          img.src = data.data[0].album.cover_medium;
+          /* per la seconda card */
+
+          const titolo1 = document.getElementById("titolo-2");
+          titolo1.textContent = data.data[1].title;
+
+          const durata1 = document.getElementById("durata-2");
+          durata1.textContent = data.data[1].duration + " sec";
+
+          const img2 = document.getElementById("copertina-2");
+          img2.src = data.data[1].album.cover_medium;
+
+          /* per la terza card */
+
+          const titolo2 = document.getElementById("titolo-3");
+          titolo2.textContent = data.data[2].title;
+  
+          const durata2 = document.getElementById("durata-3");
+          durata2.textContent = data.data[2].duration + " sec";
+
+          const img3 = document.getElementById("copertina-3");
+          img3.src = data.data[2].album.cover_medium;
+        });
+
+      })
+
+      .catch((err) => {console.log("Azz! C'è un errore, eccolo qui: " + err);});
+
+    });
+
+    //CREAZIONE SECONDA  ROW CARD CON JAVASCRIPT
+
+    var containerDiv = document.createElement("div");//creazione del div container
+    containerDiv.classList.add("container", "mt-5");//assegnazione classe container al div
+
+    var rowDiv = document.createElement("div");//creazione del div row
+    rowDiv.classList.add("row", "justify-content-end");//assegnazione classe row al div. senza justify-content-end la navbar verticale si sovrapponeva alle card: così no
+
+    for (var i = 4; i <= 6; i++) {//creazione delle 3 card
+
+      var colDiv = document.createElement("div");//creazione del div col
+      colDiv.classList.add("col-md-3");//assegnazione classe col-md-3 al div
+
+
+      var cardDiv = document.createElement("div");// creazione della singola card
+      cardDiv.classList.add("card");//assegnazione classe card al div
+
+
+      var title = document.createElement("h5");//creazione dell'h5 che contiene titolo della canzone
+      title.classList.add("card-title-" + i);//assegnazione classe card-title
+      title.setAttribute("id", "titolo-" + i);//setAttibute serve per assegnare un attributo (id) e dargli un nome (titolo). metto + i perché ogni id deve avere nome diverso
+      title.textContent = "Titolo della canzone " + i;//assegno un contenuto al titolo. metto + i perché ogni id deve avere nome diverso
+      
+
+      var img = document.createElement("img");//creazione dell'immagine di copertina
+      img.classList.add("card-img-top");//assegnazione classe card-img-top all'immagine
+      img.setAttribute("alt", "copertina-album-" + i);
+      img.setAttribute("id", "copertina-" + i);
+
+
+      var cardBodyDiv = document.createElement("div");//creazione del corpo della card
+      cardBodyDiv.classList.add("card-body-" + i);//assegnazione classe card-body
+
+
+      var duration = document.createElement("p");//creazione della durata della canzone
+      duration.classList.add("card-text-" + i);//assegnazione classe
+      duration.setAttribute("id", "durata-" + i);//assegnazione id
+      duration.textContent = "";//assegnazione testo
+
+
+      //aggiunta titolo, durata, img e tutto il resto ad ogni div creato
+      cardBodyDiv.appendChild(title);
+      cardBodyDiv.appendChild(duration);
+      cardDiv.appendChild(img);
+      cardDiv.appendChild(cardBodyDiv);
+      colDiv.appendChild(cardDiv);
+      rowDiv.appendChild(colDiv);
+    }
+
+    containerDiv.appendChild(rowDiv);//aggiunta del div row al div container
+    document.body.appendChild(containerDiv);//aggiunta del div container alla pagina HTML
+
+
+    document.addEventListener("DOMContentLoaded", async() => {
+
+      /* chiamata unica per le tre card */
+
+      fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=maneskin`).then((response) => {
+        
+        response.json().then((data) => {
+
+          console.log(data);
+
+          /* per la prima card */
+
+          const titolo3 = document.getElementById("titolo-4");//agganciati all'id titolo
+          titolo3.textContent = data.data[0].title;//aggiorna il contenuto HTML con il titolo della prima canzone restituita dalla chiamata API
+          
+          const durata3 = document.getElementById("durata-4");//agganciati all'id durata
+          durata3.textContent = data.data[0].duration + " sec";//aggiorna contenuto HTML con durata canzone. ci sarebbe da trasformare in 2.12 minuti ma non so come si fa
+
+          const img = document.getElementById("copertina-4");
+          img.src = data.data[0].album.cover_medium;
+          
+          /* per la seconda card */
+
+          const titolo4 = document.getElementById("titolo-5");
+          titolo4.textContent = data.data[1].title;
+
+          const durata4 = document.getElementById("durata-5");
+          durata4.textContent = data.data[1].duration + " sec";
+
+          const img2 = document.getElementById("copertina-5");
+          img2.src = data.data[1].album.cover_medium;
+
+          /* per la terza card */
+
+          const titolo5 = document.getElementById("titolo-6");
+          titolo5.textContent = data.data[2].title;
+  
+          const durata5 = document.getElementById("durata-6");
+          durata5.textContent = data.data[2].duration + " sec";
+
+          const img3 = document.getElementById("copertina-6");
+          img3.src = data.data[2].album.cover_medium;
+        });
+
+      })
+
+      .catch((err) => {console.log("Azz! C'è un errore, eccolo qui: " + err);});
+
+    });
+
+  
+    //CREAZIONE TERZA ROW CARD CON JAVASCRIPT
+
+    var containerDiv = document.createElement("div");//creazione del div container
+    containerDiv.classList.add("container", "mt-5");//assegnazione classe container al div
+
+    var rowDiv = document.createElement("div");//creazione del div row
+    rowDiv.classList.add("row", "justify-content-end");//assegnazione classe row al div. senza justify-content-end la navbar verticale si sovrapponeva alle card: così no
+
+    for (var i = 7; i <= 9; i++) {//creazione delle 3 card
+
+      var colDiv = document.createElement("div");//creazione del div col
+      colDiv.classList.add("col-md-3");//assegnazione classe col-md-3 al div
+
+
+      var cardDiv = document.createElement("div");// creazione della singola card
+      cardDiv.classList.add("card");//assegnazione classe card al div
+
+
+      var title = document.createElement("h5");//creazione dell'h5 che contiene titolo della canzone
+      title.classList.add("card-title-" + i);//assegnazione classe card-title
+      title.setAttribute("id", "titolo-" + i);//setAttibute serve per assegnare un attributo (id) e dargli un nome (titolo). metto + i perché ogni id deve avere nome diverso
+      title.textContent = "Titolo della canzone " + i;//assegno un contenuto al titolo. metto + i perché ogni id deve avere nome diverso
+      
+
+      var img = document.createElement("img");//creazione dell'immagine di copertina
+      img.classList.add("card-img-top");//assegnazione classe card-img-top all'immagine
+      img.setAttribute("alt", "copertina-album-" + i);
+      img.setAttribute("id", "copertina-" + i);
+
+
+      var cardBodyDiv = document.createElement("div");//creazione del corpo della card
+      cardBodyDiv.classList.add("card-body-" + i);//assegnazione classe card-body
+
+
+      var duration = document.createElement("p");//creazione della durata della canzone
+      duration.classList.add("card-text-" + i);//assegnazione classe
+      duration.setAttribute("id", "durata-" + i);//assegnazione id
+      duration.textContent = "";//assegnazione testo
+
+
+      //aggiunta titolo, durata, img e tutto il resto ad ogni div creato
+      cardBodyDiv.appendChild(title);
+      cardBodyDiv.appendChild(duration);
+      cardDiv.appendChild(img);
+      cardDiv.appendChild(cardBodyDiv);
+      colDiv.appendChild(cardDiv);
+      rowDiv.appendChild(colDiv);
+    }
+
+    containerDiv.appendChild(rowDiv);//aggiunta del div row al div container
+    document.body.appendChild(containerDiv);//aggiunta del div container alla pagina HTML
+
+
+    document.addEventListener("DOMContentLoaded", async() => {
+
+      /* chiamata unica per le tre card */
+
+      fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=mahmood`).then((response) => {
+        
+        response.json().then((data) => {
+
+          console.log(data);
+
+          /* per la prima card */
+
+          const titolo6 = document.getElementById("titolo-7");//agganciati all'id titolo
+          titolo6.textContent = data.data[0].title;//aggiorna il contenuto HTML con il titolo della prima canzone restituita dalla chiamata API
+          
+          const durata6 = document.getElementById("durata-7");//agganciati all'id durata
+          durata6.textContent = data.data[0].duration + " sec";//aggiorna contenuto HTML con durata canzone. ci sarebbe da trasformare in 2.12 minuti ma non so come si fa
+          
+          const img = document.getElementById("copertina-7");
+          img.src = data.data[0].album.cover_medium;
+          /* per la seconda card */
+
+          const titolo7 = document.getElementById("titolo-8");
+          titolo7.textContent = data.data[1].title;
+
+          const durata7 = document.getElementById("durata-8");
+          durata7.textContent = data.data[1].duration + " sec";
+
+          const img2 = document.getElementById("copertina-8");
+          img2.src = data.data[1].album.cover_medium;
+          /* per la terza card */
+
+          const titolo8 = document.getElementById("titolo-9");
+          titolo8.textContent = data.data[2].title;
+  
+          const durata9 = document.getElementById("durata-9");
+          durata9.textContent = data.data[2].duration + " sec";
+
+          const img3 = document.getElementById("copertina-9");
+          img3.src = data.data[2].album.cover_medium;
+        });
+
+      })
+
+      .catch((err) => {console.log("Azz! C'è un errore, eccolo qui: " + err);});
+
+    });
+    window.onload = function countTitle() {
+
+      fetch
+    }
+
+  </script>
+</body>
+
+</html>
